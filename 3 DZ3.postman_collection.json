@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "c6c3a9f0-fb51-4e06-95b4-f61107326c48",
+		"name": "DZ3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26116473"
+	},
+	"item": [
+		{
+			"name": "get",
+			"item": [
+				{
+					"name": "getPost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPost(tags) fail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPost (fail)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "create",
+			"item": [
+				{
+					"name": "createPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n\r\n            \"image\": \"https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg\",\r\n      \r\n            \"tags\": [\r\n                \"animal\",\r\n                \"dog\",\r\n                \"golden retriever\"\r\n            ],\r\n            \"text\": \"adult Labrador retriever\",\r\n         \r\n            \"owner\": \"60d0fe4f5311236168a109ca\"\r\n               \r\n            }\r\n        \r\n       \r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPost(img without \"\")fail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n\r\n            \"image\": https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg,\r\n      \r\n            \"tags\": [\r\n                \"animal\",\r\n                \"dog\",\r\n                \"golden retriever\"\r\n            ],\r\n            \"text\": \"adult Labrador retriever\",\r\n         \r\n            \"owner\": \"60d0fe4f5311236168a109ca\"\r\n               \r\n            }\r\n        \r\n       \r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createPost(tag=number)fail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "        {\r\n\r\n            \"image\": \"https://img.dummyapi.io/photo-1564694202779-bc908c327862.jpg\",\r\n      \r\n            \"tags\": [\r\n                4,\r\n                \"dog\",\r\n                \"golden retriever\"\r\n            ],\r\n            \"text\": \"adult Labrador retriever\",\r\n         \r\n            \"owner\": \"60d0fe4f5311236168a109ca\"\r\n               \r\n            }\r\n        \r\n       \r\n ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/post/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"post",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{app-id}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "app-id",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
